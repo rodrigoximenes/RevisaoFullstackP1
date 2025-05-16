@@ -19,13 +19,13 @@ namespace RevisaoP1.WebAPI.Controllers
         public IActionResult Adicionar(AlunoDto alunoDto)
         {
             _servico.Adicionar(alunoDto);
-            return Ok("Aluno adicionado com sucesso");
+            return Ok(new { mensagem = "Aluno adicionado com sucesso" });
         }
 
         [HttpGet]
         public IActionResult Listar()
         {
-            return Ok(_servico.Listar());
+            return Ok(new { alunos = _servico.Listar() });
         }
     }
 }
